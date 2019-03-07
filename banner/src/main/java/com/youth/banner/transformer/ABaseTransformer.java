@@ -46,19 +46,15 @@ public abstract class ABaseTransformer implements PageTransformer {
     }
 
     /**
-     * If the position offset of a fragment is less than negative one or greater than one, returning true will set the
+     * @return If the position offset of a fragment is less than negative one or greater than one, returning true will set the
      * fragment alpha to 0f. Otherwise fragment alpha is always defaulted to 1f.
-     *
-     * @return
      */
     protected boolean hideOffscreenPages() {
         return true;
     }
 
     /**
-     * Indicates if the default animations of the view pager should be used.
-     *
-     * @return
+     * @return Indicates if the default animations of the view pager should be used.
      */
     protected boolean isPagingEnabled() {
         return false;
@@ -109,13 +105,11 @@ public abstract class ABaseTransformer implements PageTransformer {
     }
 
     /**
-     * Same as {@link Math#min(double, double)} without double casting, zero closest to infinity handling, or NaN support.
-     *
-     * @param val
-     * @param min
-     * @return
+     * @param val val
+     * @param min min
+     * @return Same as {@link Math#min(double, double)} without double casting, zero closest to infinity handling, or NaN support.
      */
-    protected static final float min(float val, float min) {
+    protected static float min(float val, float min) {
         return val < min ? min : val;
     }
 
