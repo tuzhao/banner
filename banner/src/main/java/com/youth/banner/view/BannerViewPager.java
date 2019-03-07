@@ -19,7 +19,7 @@ public class BannerViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        if(this.scrollable) {
+        if (this.scrollable) {
             if (getCurrentItem() == 0 && getChildCount() == 0) {
                 return false;
             }
@@ -31,7 +31,7 @@ public class BannerViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if(this.scrollable) {
+        if (this.scrollable) {
             if (getCurrentItem() == 0 && getChildCount() == 0) {
                 return false;
             }

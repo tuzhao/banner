@@ -2,7 +2,6 @@ package com.youth.banner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -295,7 +294,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
     }
 
     private void setBannerStyleUI() {
-        int visibility =count > 1 ? View.VISIBLE :View.GONE;
+        int visibility = count > 1 ? View.VISIBLE : View.GONE;
         switch (bannerStyle) {
             case BannerConfig.CIRCLE_INDICATOR:
                 indicator.setVisibility(visibility);
@@ -576,7 +575,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
 
     @Override
     public void onPageSelected(int position) {
-        currentItem=position;
+        currentItem = position;
         if (mOnPageChangeListener != null) {
             mOnPageChangeListener.onPageSelected(toRealPosition(position));
         }
