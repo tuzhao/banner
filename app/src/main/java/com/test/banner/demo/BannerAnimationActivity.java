@@ -1,12 +1,13 @@
 package com.test.banner.demo;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.test.banner.App;
 import com.test.banner.R;
@@ -37,8 +38,9 @@ import java.util.List;
 
 public class BannerAnimationActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, OnBannerListener {
     Banner banner;
-    List<Class<? extends ViewPager.PageTransformer>> transformers=new ArrayList<>();
-    public void initData(){
+    List<Class<? extends ViewPager.PageTransformer>> transformers = new ArrayList<>();
+
+    public void initData() {
         transformers.add(DefaultTransformer.class);
         transformers.add(AccordionTransformer.class);
         transformers.add(BackgroundToForegroundTransformer.class);
@@ -57,7 +59,7 @@ public class BannerAnimationActivity extends AppCompatActivity implements Adapte
         transformers.add(ZoomOutTranformer.class);
         transformers.add(ZoomOutSlideTransformer.class);
     }
-   
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +85,6 @@ public class BannerAnimationActivity extends AppCompatActivity implements Adapte
 
     @Override
     public void OnBannerClick(int position) {
-        Toast.makeText(getApplicationContext(),"你点击了："+position,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "你点击了：" + position, Toast.LENGTH_SHORT).show();
     }
 }

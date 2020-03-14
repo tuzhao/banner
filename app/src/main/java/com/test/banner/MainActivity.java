@@ -3,8 +3,6 @@ package com.test.banner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +10,9 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.test.banner.demo.BannerAnimationActivity;
 import com.test.banner.demo.BannerLocalActivity;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             }
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         listView.addHeaderView(banner);
 
         String[] data = getResources().getStringArray(R.array.demo_list);
-        listView.setAdapter(new SampleAdapter(this,data));
+        listView.setAdapter(new SampleAdapter(this, data));
         listView.setOnItemClickListener(this);
 
         //简单使用
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     @Override
     public void OnBannerClick(int position) {
-        Toast.makeText(getApplicationContext(),"你点击了："+position,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "你点击了：" + position, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position){
+        switch (position) {
             case 1:
                 startActivity(new Intent(this, BannerAnimationActivity.class));
                 break;

@@ -1,10 +1,11 @@
 package com.test.banner.demo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.test.banner.App;
 import com.test.banner.R;
@@ -12,9 +13,10 @@ import com.test.banner.loader.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
-public class BannerStyleActivity extends AppCompatActivity implements  AdapterView.OnItemSelectedListener {
+public class BannerStyleActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Banner banner;
     Spinner spinnerStyle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class BannerStyleActivity extends AppCompatActivity implements  AdapterVi
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        switch (position){
+        switch (position) {
             case 0:
                 banner.updateBannerStyle(BannerConfig.NOT_INDICATOR);
                 break;
