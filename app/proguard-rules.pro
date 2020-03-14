@@ -44,7 +44,7 @@
 #如果有引用v4包可以添加下面这行
 -keep public class * extends android.support.v4.app.Fragment
 #忽略警告
--ignorewarning
+-ignorewarnings
 
 -keep class com.youth.banner.** {
     *;
